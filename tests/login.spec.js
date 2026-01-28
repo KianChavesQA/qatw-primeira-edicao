@@ -1,5 +1,10 @@
 import { test, expect } from "@playwright/test";
-import { user } from "../fixtures/user-data.js";
+
+const user = {
+  cpf: "00000014141",
+  password: "147258",
+  invalid2faCode: "123456",
+};
 
 test("shouldn't login with invalid 2fa authenticator code", async ({
   page,
