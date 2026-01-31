@@ -1,6 +1,6 @@
 # QA Tech Week - Primeira Edição
 
-Bem-vindo ao repositório do **QA Tech Week - Primeira Edição**! Aqui você encontrará as instruções para configurar o ambiente, subir os serviços necessários e rodar os testes automatizados com Playwright.
+Bem-vindo ao repositório do **QA Tech Week - Primeira Edição**! Este repositório contém o projeto de automação de testes E2E desenvolvido sob a mentoria de Fernando Papito. O foco do projeto é a automação de uma aplicação bancária (Paybank), explorando desafios reais de infraestrutura e arquitetura de software.
 
 ## 📌 Pré-requisitos
 
