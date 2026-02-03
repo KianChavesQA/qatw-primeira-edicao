@@ -23,8 +23,7 @@ export async function cleanDb() {
   }
 }
 export async function get2FAcode() {
-  const query = `SELECT code FROM public."TwoFactorCode" ORDER BY id DESC LIMIT 1;`;
-
+  const query = `SELECT code FROM public."TwoFactorCode" t JOIN public."User" u ON t."userId" = u.id WHERE u.cpf = '${cpf}' ORDER BY t."createdAt" DESC LIMIT 1`;
   let tentativas = 5;
   while (tentativas > 0) {
     const result = await db.oneOrNone(query);
