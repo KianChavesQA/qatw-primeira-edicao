@@ -1,6 +1,6 @@
 # QA Tech Week - Primeira Edição
 
-Este repositório contém o projeto de automação de testes E2E desenvolvido durante a \*\*QA Tech Week - 1ª Edição, sob a mentoria de Fernando Papito. O foco do projeto é a automação de uma aplicação bancária (Paybank), explorando desafios reais de infraestrutura e arquitetura de software.
+Bem-vindo ao repositório do **QA Tech Week - Primeira Edição**! Este repositório contém o projeto de automação de testes E2E desenvolvido sob a mentoria de Fernando Papito. O foco do projeto é a automação de uma aplicação bancária (Paybank), explorando desafios reais de infraestrutura e arquitetura de software.
 
 ## 📌 Pré-requisitos
 
