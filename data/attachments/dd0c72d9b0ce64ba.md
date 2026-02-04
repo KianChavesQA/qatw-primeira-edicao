@@ -1,0 +1,32 @@
+# Page snapshot
+
+```yaml
+- generic [ref=e5]:
+  - img "Logo" [ref=e7]
+  - generic [ref=e8]:
+    - img [ref=e9]
+    - generic [ref=e11]: Acesso negado. Por favor, tente novamente.
+  - generic [ref=e12]:
+    - heading "Informe sua senha" [level=1] [ref=e14]
+    - generic [ref=e16]:
+      - img [ref=e18]
+      - img [ref=e21]
+      - img [ref=e24]
+      - img [ref=e27]
+      - img [ref=e30]
+      - img [ref=e33]
+    - generic [ref=e35]:
+      - button "8" [disabled]
+      - button "2" [disabled]
+      - button "9" [disabled]
+      - button "1" [disabled]
+      - button "3" [disabled]
+      - button "5" [disabled]
+      - button "7" [disabled]
+      - button "0" [disabled]
+      - button "4" [disabled]
+      - button "6" [disabled]
+    - generic [ref=e36]:
+      - button "Limpar" [ref=e37] [cursor=pointer]
+      - button "Continuar" [ref=e38] [cursor=pointer]
+```
