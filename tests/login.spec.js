@@ -4,8 +4,6 @@ import { LoginPage } from "../pages/LoginPage.js";
 import { DashPage } from "../pages/DashPage.js";
 import { LoginActions } from "../actions/LoginActions.js";
 import { cleanJobs, getJob } from "../support/redis.js";
-import { get } from "node:http";
-test.describe.configure({ mode: "serial" });
 
 // Massa de teste fica fora (pode até ser um JSON separado)
 const user = {
