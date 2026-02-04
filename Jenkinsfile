@@ -1,7 +1,7 @@
 pipeline {
     agent {
         docker {
-            image 'kianchaves/playwright-jdk:latest'
+            image 'kianchaves/playwright:v1.58.0-noble
             args '--network qatw-primeira-edicao_skynet'
         }
     }
