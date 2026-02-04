@@ -1,0 +1,19 @@
+{
+  "name": "qatw-primeira-edicao",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:KianChavesQA/qatw-primeira-edicao.git",
+  "author": "Kian Chaves <kianchaves@live.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "@playwright/test": "^1.58.0",
+    "@types/node": "^25.0.10"
+  },
+  "scripts": {},
+  "dependencies": {
+    "allure-commandline": "^2.36.0",
+    "allure-playwright": "^3.4.5",
+    "bullmq": "^5.67.2",
+    "pg-promise": "^12.3.0"
+  }
+}
