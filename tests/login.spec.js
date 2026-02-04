@@ -3,6 +3,9 @@ import { get2FAcode } from "../support/db.js";
 import { LoginPage } from "../pages/LoginPage.js";
 import { DashPage } from "../pages/DashPage.js";
 import { LoginActions } from "../actions/LoginActions.js";
+import { cleanJobs, getJob } from "../support/redis.js";
+test.describe.configure({ mode: "serial" });
+
 // Massa de teste fica fora (pode até ser um JSON separado)
 const user = {
   cpf: "00000014141",
@@ -29,28 +32,34 @@ test("Shouldn't login with invalid 2fa authenticator code", async ({
 });
 
 test("Should login with valid 2fa code", async ({ page }) => {
+  await cleanJobs();
   await loginPage.acessPage();
   await loginPage.fillCPF(user.cpf);
   await loginPage.fillPassword(user.password);
-  await page.waitForTimeout(2000); // w8ting for code generation
-  const code = await get2FAcode();
+  await page
+    .getByRole("heading", { name: "Verificação em duas etapas" })
+    .waitFor({ timeout: 5000 });
+  const code = await getJob();
+  //const code = await get2FAcode(user.cpf);
   await loginPage.fill2FACode(code);
-  await page.waitForTimeout(2000); // waiting for balance load
   const dashPage = new DashPage(page);
-  expect(await dashPage.getBalance()).toHaveText("R$ 5.000,00");
+  await expect(await dashPage.getBalance()).toHaveText("R$ 5.000,00", {
+    timeout: 10000,
+  });
 });
 
 test("Should login with valid 2fa code **Actions**", async ({ page }) => {
+  await cleanJobs();
   const loginActions = new LoginActions(page);
-
   await loginActions.acessPage();
   await loginActions.fillCPF(user.cpf);
   await loginActions.fillPassword(user.password);
-  await page.waitForTimeout(2000); // w8ting for code generation
-  const code = await get2FAcode();
+  await page
+    .getByRole("heading", { name: "Verificação em duas etapas" })
+    .waitFor({ timeout: 5000 });
+  const code = await getJob();
   await loginActions.fill2FACode(code);
-  await page.waitForTimeout(2000); // waiting for balance load
   await expect(await loginActions.getBalance()).toHaveText("R$ 5.000,00", {
-    timeout: 30000,
+    timeout: 10000,
   });
 });
